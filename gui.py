@@ -8,6 +8,7 @@ from kivy.uix.image import Image
 import unrar
 import rarfile
 import sys
+import shutil
 
 cbr = rarfile.RarFile(sys.argv[1])
 for f in cbr.infolist():
@@ -31,4 +32,4 @@ class Gui(App):
 
 if __name__ == '__main__':
   Gui().run()
-
+  shutil.rmtree('./temp/comic')
