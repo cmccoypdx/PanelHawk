@@ -9,6 +9,7 @@ import unrar
 import rarfile
 import sys
 import shutil
+import os
 
 cbr = rarfile.RarFile(sys.argv[1])
 for f in cbr.infolist():
@@ -22,14 +23,17 @@ for fn in cbr.namelist():
 comic = (cbr.infolist()[5]).filename
 print(type(comic))
 
-cbr.extractall(path='./temp/comic', members=cbr.infolist())
+#cbr.extractall(path='./temp/comic', members=cbr.infolist())
+pages = os.listdir('./temp/comic')
 
 class Gui(App):
 
   def build(self):
     #return Label(text='PanelHawk')
-    return Image(source='/Unnatural 001-006.jpg')
+    #print(pages[0])
+    return Image(source = './temp/comic/' + pages[0])
+    #return Image(source='./temp/comic/Unnatural001.jpg')
 
 if __name__ == '__main__':
   Gui().run()
-  shutil.rmtree('./temp/comic')
+  #shutil.rmtree('./temp/comic')
