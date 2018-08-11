@@ -35,6 +35,7 @@ if len(os.listdir(path)) == 1:
   path += os.listdir(path)[0]
   path += '/'
 pages = os.listdir(path)
+pages.sort()
 
 
 class Comic(Widget):
