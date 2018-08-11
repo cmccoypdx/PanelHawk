@@ -5,10 +5,9 @@ from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.image import Image
 from kivy.uix.widget import Widget
-from kivy.graphics import Rectangle
+from kivy.graphics import InstructionGroup
 from kivy.core.window import Window
 
-import unrar
 import rarfile
 import sys
 import shutil
@@ -22,6 +21,7 @@ cbr = rarfile.RarFile(sys.argv[1])
 #  if f.filename == 'README':
 #    print(rf.read(f))
 
+# Debug code for printing just filenames in cbr
 #for fn in cbr.namelist():
 #  print(fn)
 
@@ -55,6 +55,7 @@ class Comic(Widget):
     self.page.size = self.size
 
   def update(self):
+    self.canvas.clear()
     with self.canvas:
       self.page = Image(source = path + pages[self.pageIndex], pos=self.pos, size=self.size)
 
