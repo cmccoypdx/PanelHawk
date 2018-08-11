@@ -44,28 +44,28 @@ class Comic(Widget):
   def __init__(self, **kwargs):
     super(Comic, self).__init__(**kwargs)
     with self.canvas:
-      self.bg = Image(source = path + pages[self.pageIndex], pos=self.pos, size=self.size)
+      self.page = Image(source = path + pages[self.pageIndex], pos=self.pos, size=self.size)
 
     self.bind(pos=self.update_bg)
     self.bind(size=self.update_bg)
 
   def update_bg(self, *args):
-    self.bg.pos = self.pos
-    self.bg.size = self.size
+    self.page.pos = self.pos
+    self.page.size = self.size
 
   def update(self):
-    self.canvas.clear()
     with self.canvas:
-      self.bg = Image(source = path + pages[self.pageIndex], pos=self.pos, size=self.size)
+      self.page = Image(source = path + pages[self.pageIndex], pos=self.pos, size=self.size)
 
-  def page_turn(self, touch):
+  def on_touch_down(self, touch):
     if touch.x < self.width / 3:
-      if pageIndex > 0:
-        pageIndex -= 1
+      if self.pageIndex > 0:
+        self.pageIndex -= 1
     if touch.x > self.width - self.width / 3:
-      if pageIndex < len(pages) - 1:
-        pageIndex += 1
-    update()
+      if self.pageIndex < len(pages) - 1:
+        self.pageIndex += 1
+    self.update()
+
 
   def build(self):
     return page
