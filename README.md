@@ -16,8 +16,8 @@ Neither kivy nor rarfile are distributed with PanelHawk, but both can be found a
 package manager of choice.
 
 # Requirements:
-kivy version 1.11 or higher
-rarfile version 3.0 or higher
+kivy version 1.11 or higher,
+rarfile version 3.0 or higher,
 python version 3.5 or higher
 
 # Build and run:
