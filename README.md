@@ -15,12 +15,12 @@ which is licensed under the ISC license, and can be found at https://github.com/
 Neither kivy nor rarfile are distributed with PanelHawk, but both can be found at the above URLs, or installed with your
 package manager of choice.
 
-# Requirements:
+### Requirements:
 kivy version 1.11 or higher,
 rarfile version 3.0 or higher,
 python version 3.5 or higher
 
-# Build and run:
+### Build and run:
 I have not yet attempted to build PanelHawk into a binary executable. The first binary release will likely be targeted 
 at Android, and I plan to make that available here when it is ready. For now, PanelHawck can be run in the python interpreter 
 (version 3.5 or higher). Be sure to install kivy and rarfile into your python environment (I recommend using an
@@ -33,6 +33,6 @@ with python versions above 3.5, and remember to change the kivy require statemen
 The current version of PanelHawk has no menu, and so the path to the .cbr file that you wish to read must be passed as 
 an argument when running the program, e.g. 'python3 PanelHawk.py /path/to/comic.cbr'
 
-# License
+### License
 This program is licensed under the GNU General Public License. Please see the file COPYING in this distribution for the
 details of this license.
