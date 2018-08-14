@@ -98,7 +98,7 @@ class Comic(GridLayout):
         self.pageIndex += 1
     self.update()
 
-class Gui(App):
+class PanelHawk(App):
 
   def build(self):
     root = Comic()
@@ -107,7 +107,7 @@ class Gui(App):
 if __name__ == '__main__':
 
   # Start GUI
-  Gui().run()
+  PanelHawk().run()
 
   # Empty temp folder on app exit
   shutil.rmtree('./temp/comic')
